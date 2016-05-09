@@ -122,7 +122,7 @@ sub fill_dialog
 				@tablangues = split(/,/,join(',',$languesutil));
 
 				# Lancement de la requête
-				my $query = "select ?entite ?nomInternational where {?entite rdf:type dbpedia-owl:".$classliste{$class}.". ?entite owl:sameAs ?nomInternational";
+				my $query = "select ?entite ?nomInternational where {?entite rdf:type dbpedia-owl:".$classliste{$class}.". ?entite owl:sameAs ?nomInternational}";
 				print "Veuillez patienter...\n";
 				system("python renom.py \"$query\"");
 				transfoxml("outputpython.txt", $class);
